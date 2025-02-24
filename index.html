@@ -214,8 +214,8 @@ button:hover {
           document.getElementById('form').addEventListener('submit', (e) => {
                     e.preventDefault();
                     const name = document.getElementById('name').value;
-                    if(name){
-                      const msg = document.getElementById('input').value;
+                    const msg = document.getElementById('input').value;
+                    if(name && msg) {
                       console.log(name, " : ", msg);
                       socket.emit('chat', {name: name, msg: msg});
                       
